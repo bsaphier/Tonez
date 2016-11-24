@@ -1,0 +1,19 @@
+{
+  "name": "tonez",
+  "version": "1.0.0",
+  "description": "first experiment with toneJs",
+  "main": "app.js",
+  "scripts": {
+    "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets",
+    "start:production": "node app.js",
+    "start:dev": "nodemon -e html,css,js app.js",
+    "start": "npm run start:dev"
+  },
+  "author": "Ben Saphier",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "node-sass": "^3.13.0",
+    "tone": "^0.8.0"
+  }
+}
