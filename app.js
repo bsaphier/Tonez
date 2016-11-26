@@ -11,6 +11,8 @@ nunjucks.configure('views', { noCache: true });
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
+app.set('port', (process.env.PORT || port));
+
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -37,6 +39,6 @@ app.use(function (err, req, res, next) {
   });
 });
 
-app.listen(3000, function () {
-  console.log('ooooh my ping', 3000);
+app.listen(app.get('port'), function () {
+  console.log('ooooh my ping', app.get('port'));
 });
