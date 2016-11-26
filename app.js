@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
+const path = require('path');
 
 const app = express();
 const port = 1337;
@@ -14,21 +15,26 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req, res, next) => {
-  res.render('layout');
-});
+app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
+app.use('/jquery', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, '/public')));
 
-app.use((req, res, next) => {
+
+app.use(require('./routes'));
+
+app.use(function (req, res, next) {
   const err = new Error('errororororor');
   err.status = 404;
   next(err);
 });
 
-app.use((err, req, res, next) => {
-  console.log(err);
-  res.sendStatus(err.status || 500);
+app.use(function (err, req, res, next) {
+  console.error(err, err.stack);
+  res.status(err.status || 500);
+  res.render('error', {
+    error: err
+  });
 });
 
 app.listen(port, function () {

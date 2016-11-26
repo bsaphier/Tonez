@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 
 <html>
-  <title>tonez</title>
+  <title>tonez - {% block title %}{% endblock %}</title>
   <head>
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/stylesheets/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="animate.min.css">
+    <!-- <link href="animate.min.css" rel="stylesheet"> -->
 
   </head>
   <body>
-    <div class="text__shit shadow">
-      <h1>Some shit is going here</h1>
+    <div class="navbar">
+      <div class="container">
+      </div>
     </div>
 
+    {% block content %}
+    {% endblock %}
+
+    <script src="/jquery/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>

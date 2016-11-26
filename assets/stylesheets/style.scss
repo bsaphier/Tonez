@@ -1,7 +1,6 @@
 $color: #A90DFF;
-$other-color: #FFFF00;
-
-// As hex codes */
+$other-color: #FFFF59;
+$lighter-color: #9A5FBA;
 
 $color-primary-0: #450A65;	// Main Primary color */
 $color-primary-1: #68099D;
@@ -9,51 +8,60 @@ $color-primary-2: #550E7C;
 $color-primary-3: #2F0446;
 $color-primary-4: #1C0229;
 
+$rgba-primary-0: rgba( 69, 10, 101, 0.5);	// Main Primary color */
+$rgba-primary-1: rgba(104,  9, 157, 0.3);
+$rgba-primary-2: rgba( 85, 14, 124, 0.2);
+$rgba-primary-3: rgba( 47,  4, 70, 0.2);
+$rgba-primary-4: rgba( 28,  2, 41, 0.1);
 
+*, :before, :after {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
 
-// As RGBa codes */
+html {
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+}
 
-$rgba-primary-0: rgba( 69, 10,101,1);	// Main Primary color */
-$rgba-primary-1: rgba(104,  9,157,1);
-$rgba-primary-2: rgba( 85, 14,124,1);
-$rgba-primary-3: rgba( 47,  4, 70,1);
-$rgba-primary-4: rgba( 28,  2, 41,1);
+h1 {
+  display: block;
+  font-size: 6rem;
+  font-weight: 100;
+}
 
+.text__shit {
+  text-align: center;
+  color: transparent;
+  background: -webkit-linear-gradient(162deg, $lighter-color, $color-primary-1, $other-color);
+  background-size: 666% 666%;
+  -webkit-background-clip: text;
+  -webkit-animation: gradwave 12s ease infinite;
+}
 
+.shadow {
+   text-shadow: 0.0px 0.0px 0.5px $rgba-primary-4,
+                0.5px 0.5px 1.0px $rgba-primary-3,
+                1.0px 1.0px 1.5px $rgba-primary-2;
+   -webkit-transition: all 0.09s ease-out;
+}
 
-// .text__shit {
-//   text-align: center;
-//   background: linear-gradient(270deg, $color, $other-color);
-//   background-size: 100% 100%;
-//   // background-clip: text;
-//
-//   // animation: gradShift 15s ease infinite;
-//   //
-//   // @keyframes gradShift {
-//   //     0%{background-position:0% 50%}
-//   //     50%{background-position:100% 100%}
-//   //     100%{background-position:100% 50%}
-//   // }
-// }
-//
-// .shadow {
-//    color: $color-primary-0;
-//
-//    font: bold 52px Helvetica, Arial, Sans-Serif;
-//    text-shadow: 1px 1px $color-primary-3,
-//                 2px 2px $color-primary-3,
-//                 3px 3px $color-primary-4;
-//   //  -webkit-transition: all 0.62s ease-out;
-// }
-//
-// .shadow:hover {
-//    position: relative;
-//    top: -3px;
-//    left: -3px;
-//    text-shadow: 1px 1px $color-primary-1,
-//                 2px 2px $color-primary-2,
-//                 3px 3px $color-primary-0,
-//                 4px 4px $color-primary-3,
-//                 5px 5px $color-primary-3,
-//                 6px 6px $color-primary-4;
-// }
+.shadow:hover {
+   position: relative;
+   top: -2.5px;
+   left: -2.5px;
+   text-shadow: 0.0px 0.0px 0.5px $rgba-primary-4,
+                0.5px 0.5px 1.0px $rgba-primary-3,
+                1.0px 1.0px 1.5px $rgba-primary-3,
+                1.5px 1.5px 2.0px $rgba-primary-2,
+                2.0px 2.0px 2.5px $rgba-primary-2,
+                2.5px 2.5px 3.0px $rgba-primary-1;
+}
+
+@-webkit-keyframes gradwave {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
