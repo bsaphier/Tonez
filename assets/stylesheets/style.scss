@@ -25,8 +25,18 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+body {
+  border-top: 20em;
+}
+
 h1 {
   font-weight: 100;
+}
+
+.funky {
+  text-align: center;
+  -webkit-animation-delay: 0.03s;
+  -webkit-animation-duration: .1s;
 }
 
 .wavy--shit {
@@ -34,7 +44,6 @@ h1 {
   font-weight: 100;
   color: transparent;
   letter-spacing: -.062em;
-  text-align: center;
   background: -webkit-linear-gradient(162deg, $lighter-color, $color-primary-1, $other-color);
   background-size: 666% 666%;
   -webkit-background-clip: text;
@@ -58,11 +67,6 @@ h1 {
                 1.5px 1.5px 2.0px $rgba-primary-2,
                 2.0px 2.0px 2.5px $rgba-primary-2,
                 2.5px 2.5px 3.0px $rgba-primary-1;
-}
-
-.funky {
-  -webkit-animation-delay: 0.03s;
-  -webkit-animation-duration: .1s;
 }
 
 @-webkit-keyframes gradwave {

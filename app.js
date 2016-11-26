@@ -37,6 +37,6 @@ app.use(function (err, req, res, next) {
   });
 });
 
-app.listen(port, function () {
-  console.log('ooooh my ping', port);
+app.listen(3000, function () {
+  console.log('ooooh my ping', 3000);
 });
