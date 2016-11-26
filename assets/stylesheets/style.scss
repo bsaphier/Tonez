@@ -18,23 +18,23 @@ $rgba-primary-4: rgba( 28,  2, 41, 0.1);
   margin: 0;
   padding: 0;
   position: relative;
-  box-sizing: border-box;
 }
 
 html {
-  -webkit-font-smoothing: antialiased;
   width: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1 {
-  display: block;
-  font-size: 6rem;
   font-weight: 100;
 }
 
-.text__shit {
-  text-align: center;
+.wavy--shit {
+  font-size: 6rem;
+  font-weight: 100;
   color: transparent;
+  letter-spacing: -.062em;
+  text-align: center;
   background: -webkit-linear-gradient(162deg, $lighter-color, $color-primary-1, $other-color);
   background-size: 666% 666%;
   -webkit-background-clip: text;
@@ -45,7 +45,7 @@ h1 {
    text-shadow: 0.0px 0.0px 0.5px $rgba-primary-4,
                 0.5px 0.5px 1.0px $rgba-primary-3,
                 1.0px 1.0px 1.5px $rgba-primary-2;
-   -webkit-transition: all 0.09s ease-out;
+   transition: all 0.09s ease-out;
 }
 
 .shadow:hover {
@@ -58,6 +58,11 @@ h1 {
                 1.5px 1.5px 2.0px $rgba-primary-2,
                 2.0px 2.0px 2.5px $rgba-primary-2,
                 2.5px 2.5px 3.0px $rgba-primary-1;
+}
+
+.funky {
+  -webkit-animation-delay: 0.03s;
+  -webkit-animation-duration: .1s;
 }
 
 @-webkit-keyframes gradwave {
