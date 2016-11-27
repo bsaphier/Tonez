@@ -1,7 +1,7 @@
 'use strict';
 
 $('.funky').hover(function() {
-  $(this).addClass('animated pulse');
+  $(this).addClass('');
 }, function() {
-  $(this).removeClass('animated pulse');
+  $(this).removeClass('');
 });

@@ -5,13 +5,12 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 
 const app = express();
-const port = 1337;
+
+app.set('port', (process.env.PORT || 1337));
 
 nunjucks.configure('views', { noCache: true });
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
-
-app.set('port', (process.env.PORT || port));
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -25,12 +24,15 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(require('./routes'));
 
+
+// ***** Catch any request not handled in routes ***** //
 app.use(function (req, res, next) {
   const err = new Error('errororororor');
   err.status = 404;
   next(err);
 });
 
+// ***** Error handling ***** //
 app.use(function (err, req, res, next) {
   console.error(err, err.stack);
   res.status(err.status || 500);
@@ -40,5 +42,5 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(app.get('port'), function () {
-  console.log('ooooh my ping', app.get('port'));
+  console.log(`Ooooooh, port #${app.get('port')} is pinging`);
 });
